@@ -8,25 +8,26 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Usuario {
   cod_usuario    Int      @id @default(autoincrement())
   nome           String
   dataNascimento String
-  cpf            String
-  email          String   @unique
+  cpf            String   @unique
+  email          String   
   senha          String
 }
 
 model Estacao {
   cod_estacao Int          @id @default(autoincrement())
-  macAdress   String
+  macAdress   String       @unique
   nome        String
   cidade      String
   estado      String
   numero      Int
-  cep         Int
+  cep         String
   parametros  Parametro[]  // Campo de relação oposta
 }
 
@@ -40,9 +41,9 @@ model TipoParametro {
 }
 
 model Parametro {
-  cod_parametro       Int           @id @default(autoincrement())
+  cod_parametro      Int           @id @default(autoincrement())
   cod_estacao        Int
-  cod_tipoParametro   Int
+  cod_tipoParametro  Int
   estacao            Estacao       @relation(fields: [cod_estacao], references: [cod_estacao])
   tipoParametro      TipoParametro  @relation(fields: [cod_tipoParametro], references: [cod_tipoParametro])
   dados              Dados[]        // Campo de relação oposta
@@ -52,6 +53,8 @@ model Parametro {
 model Dados {
   cod_dados   Int      @id @default(autoincrement())
   cod_parametro Int
+  Valor        Int
+  data         String
   parametro   Parametro @relation(fields: [cod_parametro], references: [cod_parametro])
 }
 
