@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "prisma": "^5.20.0",
+          "@prisma/client": "^5.20.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0"
+  },
+  "scripts": {
+      "migrate": "npx prisma migrate dev",
+      "generate": "npx prisma generate",
+      "start": "npm run migrate && npm run generate && node database.ts"
+    }
+}
