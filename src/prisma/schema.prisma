@@ -37,6 +37,7 @@ model TipoParametro {
   fator             String
   offset            String
   unidadeMedida     String
+  json              String   @default("") // Valor padrão para dados existentes
   parametros        Parametro[]  // Campo de relação oposta
 }
 
@@ -54,7 +55,7 @@ model Dados {
   cod_dados   Int      @id @default(autoincrement())
   cod_parametro Int
   Valor        Int
-  data         String
+  unixtime     Int   @default(0)  
   parametro   Parametro @relation(fields: [cod_parametro], references: [cod_parametro])
 }
 
@@ -70,9 +71,8 @@ model Alarmes {
 
 model HistoricoAlarme {
   cod_historicoAlarme Int      @id @default(autoincrement())
-  valor                String
-  data                 String
-  hora                 String
+  valor               String
+  unixtime            Int   @default(0)  
   cod_alarme          Int
-  alarme               Alarmes   @relation(fields: [cod_alarme], references: [cod_alarme])
+  alarme              Alarmes   @relation(fields: [cod_alarme], references: [cod_alarme])
 }
