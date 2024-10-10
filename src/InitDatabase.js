@@ -10,6 +10,7 @@ const client = new Client({
     console.log("Escolha uma opção:");
     console.log("1: Atualizar o Database de Produção (Para Deploy/ Usuarios)");
     console.log("2: Atualizar o Database de Desenvolvimento (Para Desenvolvedores)");
+    console.log("3: Analisar Schema do Prisma ( GUI )");
   
     const choice = readlineSync.question('Digite o numero da sua escolha: ');
   
@@ -29,6 +30,10 @@ const client = new Client({
 
 
         break;
+      case '3':
+        execCommand('npx prisma studio');
+        break;
+
       default:
         console.log('Opção inválida.');
     }

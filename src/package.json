@@ -9,7 +9,7 @@
   "scripts": {
     "migrate": "npx prisma migrate dev",
     "generate": "npx prisma generate",
-    "start": "node testConnection.js "
+    "start": "node InsertsDatabase.js && node InitDatabase.js "
   },
   "dependencies": {
     "pg": "^8.13.0",
