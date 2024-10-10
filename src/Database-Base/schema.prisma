@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -32,7 +32,7 @@ model Parametro {
   cod_estacao       Int
   estacao           Estacao       @relation(fields: [cod_estacao], references: [cod_estacao])
   cod_tipoParametro Int
-  tipoParametro     TipoParametro @relation(fields: [cod_tipoParametro], references: [cod_tipoParametro])
+  tipoParametro     TipoParametro  @relation(fields: [cod_tipoParametro], references: [cod_tipoParametro])
 
   Dados   Dados[]
   Alarmes Alarmes[]
