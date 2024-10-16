@@ -31,7 +31,7 @@ const client = new Client({
 
         break;
       case '3':
-        execCommand('npx prisma studio');
+        execCommand('npx prisma studio --schema ./db/src/prisma/schema.prisma');
         break;
 
       default:
