@@ -15,13 +15,13 @@ async function withTimeout(fn: () => Promise<void>, timeout: number) {
 async function main() {
   try {
 
-    // Reinicia o banco de dados com limite de 5 segundos
+    // Reinicia o banco de dados com limite de 150 segundos
     console.log('Reiniciando dados no banco de dados...\n ---\n');
-    await withTimeout(resetDatabase, 5000);
+    await withTimeout(resetDatabase, 150000);
 
-    // Popula o banco de dados com limite de 5 segundos
+    // Popula o banco de dados com limite de 150 segundos
     console.log('-----\nPopulando dados iniciais no banco de dados...\n ---\n');
-    await withTimeout(seedDatabase, 5000);
+    await withTimeout(seedDatabase, 150000);
 
     console.log('-----\nOperações concluídas com sucesso!');
   } catch (error) {
