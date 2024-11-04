@@ -6,6 +6,7 @@
   "scripts": {
     "DB": "npx prisma generate --schema \"./src/prisma/schema.prisma\" && ts-node-dev src/RestartDatabase.ts && npx prisma migrate deploy --schema \"./src/prisma/schema.prisma\" ",
     "DB:Deploy": "npx prisma generate --schema \"./src/prisma/schema.prisma\" && npx prisma migrate deploy --schema \"./src/prisma/schema.prisma\" ",
+    "Test:DB": "npx prisma generate --schema \"./src/prisma/schema.prisma\" && ts-node-dev src/Tests/Test_Base.ts",
     "migrate": "npx prisma migrate dev",
     "generate": "npx prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1"
