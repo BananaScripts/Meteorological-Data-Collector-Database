@@ -4,6 +4,10 @@
 
 Neste repositorio iremos criar uma base de dados para o projeto Meteorological-Data-Collector.
 
+### Atual Modelo de Dados: 
+<br/>
+<img src="https://github.com/BananaScripts/Meteorological-Data-Collector/blob/main/Docs/Images/ModeloBD_API-Kickoff.png" width="1000" logo="Imagem_BD"/>
+
 ### Como rodar:
 
 Adicione o arquivo .env na raiz do Backend:
