@@ -1,0 +1,21 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "Neste repositorio iremos criar uma base de dados para o projeto Meteorological-Data-Collector.",
+  "main": "index.js",
+  "scripts": {
+    "DB": "npx prisma generate --schema \"./src/prisma/schema.prisma\" && ts-node-dev src/RestartDatabase.ts && npx prisma migrate deploy --schema \"./src/prisma/schema.prisma\" ",
+    "DB:Deploy": "npx prisma generate --schema \"./src/prisma/schema.prisma\" && npx prisma migrate deploy --schema \"./src/prisma/schema.prisma\" ",
+    "migrate": "npx prisma migrate dev",
+    "generate": "npx prisma generate",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.21.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.21.1"
+  }
+}
