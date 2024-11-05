@@ -111,10 +111,11 @@ async function seedDatabase() {
     console.log('5 históricos de alarme inseridos com sucesso!\n');
 
     console.log('Dados da carga mínima inseridos com sucesso!');
+
+    await prisma.$disconnect();
+
   } catch (error) {
     console.error('Erro ao inserir dados:', error);
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
