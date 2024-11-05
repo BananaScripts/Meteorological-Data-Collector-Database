@@ -26,9 +26,6 @@ async function main() {
     console.log('-----\nOperações concluídas com sucesso!');
   } catch (error) {
     console.error('Erro ao conectar ou executar operações no banco de dados:', error);
-  } finally {
-
-    console.log('Operações concluídas.');
   }
 }
 
@@ -38,6 +35,9 @@ async function run() {
 
 
   await main();
+
+
+  console.log('Conexão com o Banco Bem Sucedida!');
 }
 
 
