@@ -106,7 +106,7 @@ async function testDatabaseOperations() {
     await prisma.alarmes.delete({ where: { cod_alarme: 99 } });
     console.log('Alarme deletado.');
 
-    await prisma.dados.delete({ where: { cod_dados: 121 } });
+    await prisma.dados.delete({ where: { cod_dados: 99 } });
     console.log('Dado deletado.');
     
     await prisma.parametro.delete({ where: { cod_parametro: 99 } });
