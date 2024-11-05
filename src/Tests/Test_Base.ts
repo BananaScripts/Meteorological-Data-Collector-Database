@@ -16,6 +16,8 @@ async function testDatabaseOperations() {
     });
     console.log('Usuário atualizado:', updatedUser);
 
+    await prisma.usuario.delete({ where: { cod_usuario: 99 } });
+    console.log('Usuário deletado.');
 
     // Estação
     const newStation = await prisma.estacao.create({
@@ -29,6 +31,8 @@ async function testDatabaseOperations() {
     });
     console.log('Estação atualizada:', updatedStation);
 
+    await prisma.estacao.delete({ where: { cod_estacao: 99 } });
+    console.log('Estação deletada.');
 
     // Tipo de Parâmetro
     const newTipoParametro = await prisma.tipoParametro.create({
@@ -42,6 +46,8 @@ async function testDatabaseOperations() {
     });
     console.log('Tipo de Parâmetro atualizado:', updatedTipoParametro);
 
+    await prisma.tipoParametro.delete({ where: { cod_tipoParametro: 99 } });
+    console.log('Tipo de Parâmetro deletado.');
 
     // Parâmetro
     const newParametro = await prisma.parametro.create({
@@ -55,6 +61,8 @@ async function testDatabaseOperations() {
     });
     console.log('Parâmetro atualizado:', updatedParametro);
 
+    await prisma.parametro.delete({ where: { cod_parametro: 99 } });
+    console.log('Parâmetro deletado.');
 
     // Dados
     const newDado = await prisma.dados.create({
@@ -68,6 +76,8 @@ async function testDatabaseOperations() {
     });
     console.log('Dado atualizado:', updatedDado);
 
+    await prisma.dados.delete({ where: { cod_dados: 99 } });
+    console.log('Dado deletado.');
 
     // Alarme
     const newAlarme = await prisma.alarmes.create({
@@ -81,7 +91,8 @@ async function testDatabaseOperations() {
     });
     console.log('Alarme atualizado:', updatedAlarme);
 
-
+    await prisma.alarmes.delete({ where: { cod_alarme: 99 } });
+    console.log('Alarme deletado.');
 
     // Histórico de Alarme
     const newHistoricoAlarme = await prisma.historicoAlarme.create({
@@ -95,32 +106,8 @@ async function testDatabaseOperations() {
     });
     console.log('Histórico de Alarme atualizado:', updatedHistoricoAlarme);
 
-
-
-
-
-
     await prisma.historicoAlarme.delete({ where: { cod_historicoAlarme: 99 } });
     console.log('Histórico de Alarme deletado.');
-
-    await prisma.alarmes.delete({ where: { cod_alarme: 99 } });
-    console.log('Alarme deletado.');
-
-    await prisma.dados.delete({ where: { cod_dados: 99 } });
-    console.log('Dado deletado.');
-    
-    await prisma.parametro.delete({ where: { cod_parametro: 99 } });
-    console.log('Parâmetro deletado.');
-
-    await prisma.tipoParametro.delete({ where: { cod_tipoParametro: 99 } });
-    console.log('Tipo de Parâmetro deletado.');
-
-    await prisma.usuario.delete({ where: { cod_usuario: 99 } });
-    console.log('Usuário deletado.');
-
-    await prisma.estacao.delete({ where: { cod_estacao: 99 } });
-    console.log('Estação deletada.');
-
   } catch (error) {
     console.error('Erro durante operações de teste no banco de dados:', error);
   } finally {
