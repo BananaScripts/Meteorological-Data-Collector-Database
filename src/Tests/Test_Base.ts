@@ -58,7 +58,7 @@ async function testDatabaseOperations() {
 
     // Dados
     const newDado = await prisma.dados.create({
-      data: { cod_dados: 121, cod_parametro: 94, Valor: 100, unixtime: 1627850000 }
+      data: { cod_dados: 99, cod_parametro: 94, Valor: 100, unixtime: 1627850000 }
     });
     console.log('Dado criado:', newDado);
 
@@ -71,7 +71,7 @@ async function testDatabaseOperations() {
 
     // Alarme
     const newAlarme = await prisma.alarmes.create({
-      data: { cod_alarme: 99, nome: 'Teste_Alarme', valor: '100', condicao: 'Maior que', cod_parametro: 99 }
+      data: { cod_alarme: 99, nome: 'Teste_Alarme', valor: '100', condicao: 'Maior que', cod_parametro: 94 }
     });
     console.log('Alarme criado:', newAlarme);
 
