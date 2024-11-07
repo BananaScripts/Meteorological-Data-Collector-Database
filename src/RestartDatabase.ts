@@ -21,7 +21,7 @@ async function main() {
 
     // Popula o banco de dados com limite de 150 segundos
     console.log('-----\nPopulando dados iniciais no banco de dados...\n ---\n');
-    await withTimeout(seedDatabase, 150000);
+    await withTimeout(() =>seedDatabase, 150000);
 
     console.log('-----\nOperações concluídas com sucesso!');
   } catch (error) {
