@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Usuario {
+  cod_usuario    Int      @id @default(autoincrement())
+  nome           String
+  dataNascimento String
+  cpf            String   @unique
+  email          String   
+  senha          String
+}
+
+model Estacao {
+  cod_estacao Int          @id @default(autoincrement())
+  macAdress   String       @unique
+  nome        String
+  cidade      String
+  estado      String
+  numero      Int
+  cep         String
+  parametros  Parametro[]  // Campo de relação oposta
+}
+
+model TipoParametro {
+  cod_tipoParametro Int          @id @default(autoincrement())
+  nome              String
+  fator             String
+  offset            String
+  unidadeMedida     String
+  json              String   @default("") // Valor padrão para dados existentes
+  parametros        Parametro[]  // Campo de relação oposta
+}
+
+model Parametro {
+  cod_parametro      Int           @id @default(autoincrement())
+  cod_estacao        Int
+  cod_tipoParametro  Int
+  estacao            Estacao       @relation(fields: [cod_estacao], references: [cod_estacao])
+  tipoParametro      TipoParametro  @relation(fields: [cod_tipoParametro], references: [cod_tipoParametro])
+  dados              Dados[]        // Campo de relação oposta
+  alarmes            Alarmes[]      // Campo de relação oposta
+}
+
+model Dados {
+  cod_dados   Int      @id @default(autoincrement())
+  cod_parametro Int
+  Valor        Int
+  unixtime     Int   @default(0)  
+  parametro   Parametro @relation(fields: [cod_parametro], references: [cod_parametro])
+}
+
+model Alarmes {
+  cod_alarme   Int      @id @default(autoincrement())
+  nome         String
+  valor        String
+  condicao     String
+  cod_parametro Int
+  parametro    Parametro @relation(fields: [cod_parametro], references: [cod_parametro])
+  historicos   HistoricoAlarme[] // Campo de relação oposta
+}
+
+model HistoricoAlarme {
+  cod_historicoAlarme Int      @id @default(autoincrement())
+  valor               String
+  unixtime            Int   @default(0)  
+  cod_alarme          Int
+  alarme              Alarmes   @relation(fields: [cod_alarme], references: [cod_alarme])
+}
