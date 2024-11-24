@@ -67,7 +67,7 @@ jobs:
           # Verifica se o diretório de testes da feature existe
           if [ -d "$FEATURE_TEST_DIR" ]; then
             echo "Rodando testes para a branch $BRANCH_NAME em $FEATURE_TEST_DIR"
-            npx ts-node-dev -- $FEATURE_TEST_DIR/Test_Base.ts
+            npx ts-node-dev -- $FEATURE_TEST_DIR/*.ts
           else
             echo "Nenhum teste foi encontrado para $BRANCH_NAME. Finalizando."
             exit 1
