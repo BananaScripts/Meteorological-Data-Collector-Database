@@ -37,7 +37,10 @@ jobs:
     
     #Executar Operações Relacionadas ao Banco de Dados
     - name: Executar Operações do BD
-      run: npm run DB
+      run: |
+        npm run DB &
+        echo $! > server_pid.txt
+
     
     # Rodar Testes
     - name: Rodar Testes
