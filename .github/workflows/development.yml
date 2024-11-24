@@ -52,7 +52,7 @@ jobs:
         # Rodando testes de integração para PRs entre 'development' e 'main'
         if [[ "$GITHUB_BASE_REF" == "main" && "$GITHUB_HEAD_REF" == "Development" ]]; then
           echo "Rodando testes de integração da branch development para main"
-          npx ts-node-dev -- src/__tests__/integration/**/*.ts
+          npx ts-node-dev -- src/__tests__/integration/*.ts
 
         # Rodando testes para a branch 'development'
         elif [[ "$BRANCH_NAME" == "Development" ]]; then
