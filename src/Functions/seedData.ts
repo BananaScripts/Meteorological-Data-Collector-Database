@@ -25,11 +25,11 @@ async function seedDatabase() {
 
     await prisma.historicoAlarme.createMany({ data: SeedData.historicoAlarmes });
     console.log('Históricos de alarme inseridos com sucesso!');
-    
-    await prisma.$disconnect();
   } catch (error) {
     console.error('Erro ao inserir dados:', error);
+  } finally {
+    await prisma.$disconnect();
   }
 }
 
-export default seedDatabase();
+export default seedDatabase;
