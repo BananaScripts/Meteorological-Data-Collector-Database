@@ -54,7 +54,7 @@ model Parametro {
 model Dados {
   cod_dados   Int      @id @default(autoincrement())
   cod_parametro Int
-  Valor        Int
+  Valor        Float
   unixtime     Int   @default(0)  
   parametro   Parametro @relation(fields: [cod_parametro], references: [cod_parametro])
 }
@@ -62,7 +62,7 @@ model Dados {
 model Alarmes {
   cod_alarme   Int      @id @default(autoincrement())
   nome         String
-  valor        String
+  valor        Float
   condicao     String
   cod_parametro Int
   parametro    Parametro @relation(fields: [cod_parametro], references: [cod_parametro])
@@ -71,7 +71,7 @@ model Alarmes {
 
 model HistoricoAlarme {
   cod_historicoAlarme Int      @id @default(autoincrement())
-  valor               String
+  valor               Float
   unixtime            Int   @default(0)  
   cod_alarme          Int
   alarme              Alarmes   @relation(fields: [cod_alarme], references: [cod_alarme])

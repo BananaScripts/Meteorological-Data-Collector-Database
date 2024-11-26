@@ -12,12 +12,12 @@ export const TestData = {
     parametro: { cod_parametro: 99, cod_estacao: 94, cod_tipoParametro: 99 },
     parametroUpdate: { cod_estacao: 99 },
 
-    dado: { cod_dados: 99, cod_parametro: 99, Valor: 100, unixtime: 1627850000 },
+    dado: { cod_dados: 99, cod_parametro: 99, Valor: 100.00, unixtime: 1627850000 },
     dadoUpdate: { Valor : 105 },
 
-    alarme: { cod_alarme: 99, nome: 'Teste_Alarme', valor: '100', condicao: 'Maior que', cod_parametro: 99 },
+    alarme: { cod_alarme: 99, nome: 'Teste_Alarme', valor: 100.00, condicao: 'Maior que', cod_parametro: 99 },
     alarmeUpdate: { nome: 'Teste_Alarme_Atualizado' },
 
-    historicoAlarme: { cod_historicoAlarme: 99, valor: '105', unixtime: 1627851000, cod_alarme: 99 },
-    historicoAlarmeUpdate: { valor: '110' },
+    historicoAlarme: { cod_historicoAlarme: 99, valor: 105.00, unixtime: 1627851000, cod_alarme: 99 },
+    historicoAlarmeUpdate: { valor: 110.00 },
 }

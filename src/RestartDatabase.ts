@@ -2,7 +2,6 @@ import { execSync } from 'child_process';
 import seedDatabase from './Functions/seedData';
 import resetDatabase from './Functions/restartData';
 
-
 async function withTimeout(fn: () => Promise<void>, timeout: number) {
   return Promise.race([
     fn(),
@@ -14,14 +13,13 @@ async function withTimeout(fn: () => Promise<void>, timeout: number) {
 
 async function main() {
   try {
-
     // Reinicia o banco de dados com limite de 150 segundos
     console.log('Reiniciando dados no banco de dados...\n ---\n');
-    await withTimeout(resetDatabase, 150000);
+    await withTimeout(resetDatabase, 15000);
 
     // Popula o banco de dados com limite de 150 segundos
     console.log('-----\nPopulando dados iniciais no banco de dados...\n ---\n');
-    await withTimeout(() =>seedDatabase, 150000);
+    await withTimeout(seedDatabase, 150000);
 
     console.log('-----\nOperações concluídas com sucesso!');
   } catch (error) {
@@ -29,16 +27,12 @@ async function main() {
   }
 }
 
-
 async function run() {
   console.log('Iniciando comandos do Prisma...');
 
-
   await main();
-
 
   console.log('Conexão com o Banco Bem Sucedida!');
 }
-
 
 run();
