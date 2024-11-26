@@ -20,7 +20,7 @@ async function resetDatabase() {
     await prisma.$executeRaw`ALTER SEQUENCE "Estacao_cod_estacao_seq" RESTART WITH 94`;
     await prisma.$executeRaw`ALTER SEQUENCE "TipoParametro_cod_tipoParametro_seq" RESTART WITH 94`;
     await prisma.$executeRaw`ALTER SEQUENCE "Parametro_cod_parametro_seq" RESTART WITH 94`;
-    await prisma.$executeRaw`ALTER SEQUENCE "Dados_cod_dados_seq" RESTART WITH 94`;
+    await prisma.$executeRaw`ALTER SEQUENCE "Dados_cod_dados_seq" RESTART WITH 72`;
     await prisma.$executeRaw`ALTER SEQUENCE "Alarmes_cod_alarme_seq" RESTART WITH 94`;
     await prisma.$executeRaw`ALTER SEQUENCE "HistoricoAlarme_cod_historicoAlarme_seq" RESTART WITH 94`;
 
