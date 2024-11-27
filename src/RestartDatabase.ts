@@ -15,7 +15,7 @@ async function main() {
   try {
     // Reinicia o banco de dados com limite de 150 segundos
     console.log('Reiniciando dados no banco de dados...\n ---\n');
-    await withTimeout(resetDatabase, 15000);
+    await withTimeout(resetDatabase, 150000);
 
     // Popula o banco de dados com limite de 150 segundos
     console.log('-----\nPopulando dados iniciais no banco de dados...\n ---\n');
