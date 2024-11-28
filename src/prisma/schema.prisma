@@ -18,6 +18,7 @@ model Usuario {
   cpf            String   @unique
   email          String   
   senha          String
+  role           String
 }
 
 model Estacao {

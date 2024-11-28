@@ -1,7 +1,7 @@
 
 export const SeedData = {
     usuarios: [
-        { nome: 'Usuario_CM', dataNascimento: '1990-01-01', cpf: '11111111111', email: 'usuario.cm.1@example.com', senha: 'userCM_001' },
+        { nome: 'Usuario_CM', dataNascimento: '1990-01-01', cpf: '11111111111', email: 'usuario.cm.1@example.com', senha: 'userCM_001', role: "user" },
     ],
     estacoes: [
         { macAdress: '08D1F999F194', nome: 'EstacaoMeteorologica_001', cidade: 'São José dos Campos', estado: 'São Paulo', numero: 1350, cep: '12247-014' },
