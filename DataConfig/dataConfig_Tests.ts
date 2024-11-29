@@ -1,6 +1,6 @@
 
 export const TestData = {
-    usuario: { cod_usuario: 99, nome: 'Teste_Usuario', dataNascimento: '2000-01-01', cpf: '99999999999', email: 'teste.usuario@example.com', senha: 'senhaTeste' },
+    usuario: { cod_usuario: 99, nome: 'Teste_Usuario', dataNascimento: '2000-01-01', cpf: '99999999999', email: 'teste.usuario@example.com', senha: 'senhaTeste', role: "admin"},
     usuarioUpdate :  { nome: 'Teste_Usuario_Atualizado' },
 
     estacao: { cod_estacao: 99, macAdress: 'AA:BB:CC:DD:EE:99', nome: 'Teste_Estacao', cidade: 'TesteCidade', estado: 'TesteEstado', numero: 9999, cep: '99999-999' },

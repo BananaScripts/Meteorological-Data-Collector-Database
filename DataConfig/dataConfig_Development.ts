@@ -1,11 +1,11 @@
 
 export const SeedData = {
     usuarios: [
-        { nome: 'Usuario_CM_001', dataNascimento: '1990-01-01', cpf: '11111111111', email: 'usuario.cm.1@example.com', senha: 'userCM1' },
-        { nome: 'Usuario_CM_002', dataNascimento: '1991-01-01', cpf: '22222222222', email: 'usuario.cm.2@example.com', senha: 'userCM2' },
-        { nome: 'Usuario_CM_003', dataNascimento: '1992-01-01', cpf: '33333333333', email: 'usuario.cm.3@example.com', senha: 'userCM3' },
-        { nome: 'Usuario_CM_004', dataNascimento: '1993-01-01', cpf: '44444444444', email: 'usuario.cm.4@example.com', senha: 'userCM4' },
-        { nome: 'Usuario_CM_005', dataNascimento: '1994-01-01', cpf: '55555555555', email: 'usuario.cm.5@example.com', senha: 'userCM5' },
+        { nome: 'Usuario_CM_001', dataNascimento: '1990-01-01', cpf: '11111111111', email: 'usuario.cm.1@example.com', senha: 'userCM1', role: "admin" },
+        { nome: 'Usuario_CM_002', dataNascimento: '1991-01-01', cpf: '22222222222', email: 'usuario.cm.2@example.com', senha: 'userCM2', role: "user" },
+        { nome: 'Usuario_CM_003', dataNascimento: '1992-01-01', cpf: '33333333333', email: 'usuario.cm.3@example.com', senha: 'userCM3', role: "admin" },
+        { nome: 'Usuario_CM_004', dataNascimento: '1993-01-01', cpf: '44444444444', email: 'usuario.cm.4@example.com', senha: 'userCM4', role: "user" },
+        { nome: 'Usuario_CM_005', dataNascimento: '1994-01-01', cpf: '55555555555', email: 'usuario.cm.5@example.com', senha: 'userCM5', role: "admin" },
     ],
     estacoes: [
         { macAdress: 'AA:BB:CC:DD:EE:01', nome: 'Estacao_CM_001', cidade: 'Cidade1', estado: 'Estado1', numero: 9901, cep: '00000-001' },
